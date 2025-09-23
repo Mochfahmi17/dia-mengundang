@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 *,
 html {
   padding: 0;
@@ -8,8 +10,8 @@ html {
 body {
   background-color: #000000;
   min-height: 100vh;
-  margin: 0;
-  font-family: poppins;
+  /* margin: 0; */
+  font-family: "Poppins", sans-serif;
   color: white;
   cursor: none;
 }
@@ -42,7 +44,7 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 20;
   margin-top: 20px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   cursor: default;
@@ -64,7 +66,7 @@ nav {
 nav .container {
   /* max-width: 1220px; */
   background-color: #0c0c0c;
-  margin: auto 2%;
+  margin: auto 3%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -104,7 +106,7 @@ nav div {
 }
 
 nav ul li a {
-  font-family: "poppins";
+  /* font-family: "Poppins"; */
   color: white;
   font-weight: 600;
   text-decoration: none;
@@ -154,7 +156,7 @@ nav ul li a:active {
   nav .container {
     flex-wrap: wrap;
     padding: 10px;
-    margin: 10px 2%;
+    margin: 10px 3%;
   }
 
   nav ul {
@@ -195,7 +197,8 @@ nav ul li a:active {
   }
 
   .produk-card {
-    width: 90%;
+    /* width: 90%; */
+    width: 100%;
     margin-bottom: 20px;
   }
 
@@ -244,12 +247,12 @@ nav ul li a:active {
 
 /*================== Home Section================== */
 .home {
-  background: url(./asset/img/BG-01.jpg);
+  /* background: url(./asset/img/BG-01.jpg);
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  width: 100%;
+  background-repeat: no-repeat; */
+  /* position: relative; */
+  /* width: 100%; */
   justify-content: center;
   height: 100vh;
   display: flex;
@@ -635,7 +638,7 @@ nav ul li a:active {
     display: block !important;
     width: 100%;
     padding: 0;
-    height: 250px;
+    height: 280px;
   }
 
   .swiper-pagination-bullet {
@@ -899,14 +902,16 @@ label {
 .produk-list {
   display: flex;
   place-items: center;
+  /* border: 1px solid red; */
   margin-inline: 1.5rem;
   padding-block: 5rem;
   position: relative;
   justify-content: center;
 }
 
-.produk-card {
+/* .produk-card {
   width: 100%;
+  border: 2px solid green;
   display: flex;
   flex-wrap: wrap;
   row-gap: 10rem;
@@ -914,33 +919,47 @@ label {
   align-items: flex-start;
   justify-content: flex-start;
   margin: 0 auto;
+} */
+
+.produk-card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, 1fr));
+  /* border: 1px solid yellow; */
+  padding: 0 2rem;
+  gap: 1.5rem;
 }
 
 .card-article {
   position: relative;
   overflow: hidden;
-  width: 328px;
+  /* border: 1px solid yellow; */
+  /* width: 328px; */
+  width: 100%;
   margin-bottom: 60px;
 }
 
 .card-img {
-  width: 328px;
+  /* width: 328px; */
+  width: 100%;
   border-radius: 1rem;
 }
 
 .card-data {
-  width: 280px;
+  /* width: 280px; */
+  width: 90%;
   background-color: white;
-  padding: 1rem 1rem;
+  padding: 1rem;
   border-radius: 0.5rem;
   position: absolute;
   bottom: -8rem;
   left: 0;
   right: 0;
-  margin-inline: auto;
+  margin: 0 auto;
+  /* margin-inline: auto; */
   opacity: 0;
   /* pointer-events: none; */
-  transform: translateY(2rem);
+  /* transform: translateY(2rem); */
   transition: transform 0.5s ease, opacity 0.5s ease 0.5s;
 }
 
@@ -1007,7 +1026,7 @@ label {
 
 .cart-button {
   position: relative;
-  width: 240px;
+  /* width: 240px; */
   height: 40px;
   border-radius: 8px;
   color: #fff;
@@ -1169,21 +1188,28 @@ label {
 
 /* Responsive Mobile */
 @media (max-width: 768px) {
-  .produk-card {
+  /* .produk-card {
     flex-direction: column;
     align-items: center;
-    row-gap: 2rem; /* Jarak antar card */
+    row-gap: 2rem;
+  } */
+
+  .produk-card {
+    grid-template-columns: 1fr;
+    place-items: center;
+    padding: 0;
   }
 
   .card-article {
     width: 100%;
-    max-width: 320px; /* Ukuran untuk mobile */
+    /* max-width: 320px; */
     margin-bottom: 30px;
   }
 
   .card-img {
     width: 100%;
-    max-width: 320px;
+    /* padding: 24px; */
+    /* max-width: 320px; */
     height: auto;
   }
 
@@ -1196,7 +1222,7 @@ label {
     margin-inline: auto;
     opacity: 0;
     transform: translateY(1rem);
-    transition: transform 0.4s ease, opacity 0.4s ease;
+    /* transition: transform 0.4s ease, opacity 0.4s ease; */
     padding: 1rem 1rem 1.5rem; /* Padding yang lebih nyaman */
   }
 
@@ -1239,18 +1265,15 @@ label {
 
   @keyframes show-data {
     50% {
-      transform: translateY(-7rem);
+      transform: translateY(-5rem);
     }
     100% {
       transform: translateY(2rem);
     }
   }
   @keyframes remove-data {
-    0% {
-      transform: translateY(-7rem);
-    }
     50% {
-      transform: translateY(-10rem);
+      transform: translateY(-5rem);
     }
     100% {
       transform: translateY(0.5rem);
@@ -1259,20 +1282,27 @@ label {
 }
 /* Layout responsif untuk tablet */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .produk-card {
+  /* .produk-card {
     width: 100%;
     justify-content: center;
-    padding: 0 20px; /* Beri padding agar tidak mentok di sisi */
-    gap: 2rem; /* Meningkatkan gap antar card */
+    padding: 0 20px;
+    gap: 2rem;
+  } */
+
+  .produk-card {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 2rem;
   }
 
   .card-article {
-    max-width: 300px; /* Ukuran lebih kecil untuk tablet */
+    /* max-width: 300px; */
+    width: 100%;
     margin-bottom: 40px;
   }
 
   .card-img {
-    max-width: 300px;
+    width: 100%;
+    /* max-width: 300px; */
   }
 
   /* Responsif untuk bagian testimoni pada tablet */
@@ -1297,10 +1327,9 @@ label {
 
   /* Responsif untuk navbar pada tablet */
   nav .container {
-    max-width: 90%;
-    background: red;
-    width: 100%;
-    margin: auto 2%;
+    /* max-width: 100%; */
+    /* width: 90%; */
+    margin: auto 3%;
     padding: 15px 30px;
   }
 
@@ -1795,7 +1824,7 @@ i {
   text-align: left;
   padding: 18px 20px;
   font-weight: bold;
-  font-family: poppins;
+  /* font-family: poppins; */
   font-size: 18px;
   background-color: #1c1a30;
   color: #ccc;
@@ -1962,13 +1991,13 @@ i {
     font-size: 12px;
   }
 
-  .card-article {
+  /* .card-article {
     max-width: 280px;
-  }
+  } */
 
-  .card-img {
+  /* .card-img {
     max-width: 280px;
-  }
+  } */
 
   .card-title {
     font-size: 18px;
@@ -2074,7 +2103,7 @@ i {
 .footer {
   color: #d8d7da;
   padding: 60px 20px 30px;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   min-height: 500px;
 }
 
