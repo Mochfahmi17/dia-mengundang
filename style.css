@@ -41,12 +41,15 @@ body {
 
 nav {
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 0;
   left: 0;
   right: 0;
   z-index: 20;
   margin-top: 20px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 5px rgba(67, 61, 61, 0.1);
   cursor: default;
   opacity: 0;
   animation: slideDown 1s ease forwards;
@@ -64,7 +67,8 @@ nav {
 }
 
 nav .container {
-  /* max-width: 1220px; */
+  max-width: 1220px;
+  width: 100%;
   background-color: #0c0c0c;
   margin: auto 3%;
   display: flex;
