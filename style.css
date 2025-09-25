@@ -926,9 +926,10 @@ label {
 } */
 
 .produk-card {
+  max-width: 1440px;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, minmax(auto, 1fr));
+  grid-template-columns: repeat(4, minmax(auto, 1fr));
   /* border: 1px solid yellow; */
   padding: 0 2rem;
   gap: 1.5rem;
