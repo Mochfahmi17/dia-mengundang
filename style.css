@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  background-color: #000000;
+  background-color: #0f172a;
   min-height: 100vh;
   /* margin: 0; */
   font-family: "Poppins", sans-serif;
@@ -257,20 +257,217 @@ nav ul li a:active {
   background-repeat: no-repeat; */
   /* position: relative; */
   /* width: 100%; */
-  justify-content: center;
-  height: 100vh;
+  justify-content: space-between;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 180px;
+  gap: 1.5rem;
+  /* padding-top: 180px; */
+  /* padding: 0 5%; */
+  align-items: center;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 4rem 2rem 3% 3%;
+  width: 100%;
 }
 
 .home-content h3 {
   color: white;
-  font-size: 32px;
+  /* font-size: 32px; */
+  font-size: 1.5rem;
   font-weight: 700;
   opacity: 0;
   animation: slideBottom 1s ease forwards;
   animation-delay: 0.7s;
+}
+
+.home-content,
+.hero-right {
+  flex: 1;
+}
+
+.hero-right .orbit-wrapper {
+  position: relative;
+  --orbit-size: min(90vw, 600px);
+  width: var(--orbit-size);
+  aspect-ratio: 1/1;
+  margin: auto;
+}
+
+.hero-right .orbit-wrapper .center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: flex;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #0b0d12;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+.ring {
+  position: absolute;
+  border-radius: 100%;
+  border: 1px solid #374151;
+}
+
+.r1 {
+  inset: 10%;
+}
+.r2 {
+  inset: 16%;
+}
+.r3 {
+  inset: 22%;
+}
+.r4 {
+  inset: 28%;
+}
+
+.hero-right .orbit-wrapper .center-circle span {
+  font-size: 12px;
+  color: #98a2b3;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+
+.orbit-item {
+  --angle: calc(45deg * var(--i));
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: rotate(var(--angle)) translateX(var(--radius)) rotate(calc(-1 * var(--angle)));
+}
+
+/* radius sesuai ring */
+.orbit-item[data-ring="1"] {
+  --radius: calc(var(--orbit-size) * 0.2);
+}
+.orbit-item[data-ring="2"] {
+  --radius: calc(var(--orbit-size) * 0.33);
+}
+.orbit-item[data-ring="3"] {
+  --radius: calc(var(--orbit-size) * 0.45);
+}
+.orbit-item[data-ring="4"] {
+  --radius: calc(var(--orbit-size) * 0.5);
+}
+
+/* isi ikon tetap tegak lurus */
+.orbit-item .pill {
+  --c: #9b5cf6; /* default, dioverride di bawah */
+  background: #0f1117;
+  color: #fff;
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 1.5rem;
+  transform-origin: center;
+  box-shadow: 0 0 14px color-mix(in oklab, var(--c) 45%, transparent), 0 0 0 2px color-mix(in oklab, var(--c) 30%, transparent) inset, 0 10px 24px rgba(0, 0, 0, 0.4);
+  animation: floaty 6s ease-in-out infinite, glowPulse 4s ease-in-out infinite;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.pill i {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+}
+
+/* Hover */
+.pill:hover {
+  transform: translateY(-4px) scale(1.18);
+  box-shadow: 0 0 30px color-mix(in oklab, var(--c) 80%, transparent), 0 0 60px color-mix(in oklab, var(--c) 65%, transparent), 0 0 0 2px color-mix(in oklab, var(--c) 50%, transparent) inset;
+}
+
+/* Tooltip caption */
+.orbit-item[data-cap]::after {
+  content: attr(data-cap);
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, 8px);
+  background: rgba(15, 17, 23, 0.92);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #eaeef5;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), 0 0 10px color-mix(in oklab, var(--c) 40%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.orbit-item:hover::after,
+.orbit-item.show-tip::after {
+  /* class ini di-toggle di JS untuk mobile tap */
+  opacity: 1;
+  transform: translate(-50%, 12px);
+}
+
+/* Warna glow per ikon (urut sesuai HTML) */
+.orbit-item:nth-of-type(1) .pill {
+  --c: #7c4dff;
+} /* user */
+.orbit-item:nth-of-type(2) .pill {
+  --c: #4ea3ff;
+} /* qrcode */
+.orbit-item:nth-of-type(3) .pill {
+  --c: #43d19e;
+} /* music */
+.orbit-item:nth-of-type(4) .pill {
+  --c: #a18cff;
+} /* image */
+.orbit-item:nth-of-type(5) .pill {
+  --c: #9b5cf6;
+} /* mail */
+.orbit-item:nth-of-type(6) .pill {
+  --c: #4cc9f0;
+} /* maps */
+.orbit-item:nth-of-type(7) .pill {
+  --c: #ffd658;
+} /* gift */
+.orbit-item:nth-of-type(8) .pill {
+  --c: #ff5ea8;
+} /* stopwatch */
+
+.orbit-item .pill i {
+  color: #fff;
+}
+
+/* ===== Animations ===== */
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 14px color-mix(in oklab, var(--c) 45%, transparent), 0 0 0 2px color-mix(in oklab, var(--c) 30%, transparent) inset, 0 10px 24px rgba(0, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 24px color-mix(in oklab, var(--c) 75%, transparent), 0 0 0 2px color-mix(in oklab, var(--c) 45%, transparent) inset, 0 14px 30px rgba(0, 0, 0, 0.55);
+  }
+}
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .pill {
+    animation: none;
+  }
 }
 
 @keyframes slideBottom {
@@ -290,7 +487,8 @@ nav ul li a:active {
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  font-size: 32px;
+  /* font-size: 32px; */
+  font-size: 1.5rem;
   font-weight: 700;
   animation: slideTop 1s ease forwards;
   animation-delay: 1s;
@@ -309,7 +507,8 @@ nav ul li a:active {
 
 .home-content h1 {
   color: white;
-  font-size: 56px;
+  /* font-size: 56px; */
+  font-size: 2rem;
   margin: -3px 0;
   animation: slideRight 1s ease forwards;
   animation-delay: 0.7s;
@@ -327,7 +526,8 @@ nav ul li a:active {
 }
 .home-content p {
   color: white;
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: 1rem;
   margin-top: 20px;
   font-style: italic;
   animation: slideLeft 1s ease forwards;
@@ -405,9 +605,14 @@ nav ul li a:active {
     line-height: 40px;
     color: white;
   }
+  .home {
+    align-items: start;
+    padding-top: 9rem;
+    flex-direction: column;
+  }
   .home-content h3 {
     color: white;
-    font-size: 26px;
+    font-size: 1rem;
     font-weight: 700;
     opacity: 0;
     animation: slideBottom 1s ease forwards;
@@ -451,6 +656,26 @@ nav ul li a:active {
     text-decoration: none;
     animation: slideTop 1s ease forwards;
     animation-delay: 1s;
+  }
+
+  .hero-right .orbit-wrapper .center-circle {
+    width: 40%;
+  }
+
+  .r4 {
+    border: none;
+  }
+
+  .orbit-item .pill {
+    width: 44px;
+    height: 44px;
+    font-size: 1.05rem;
+    border-radius: 14px;
+  }
+
+  .orbit-item[data-cap]::after {
+    font-size: 0.72rem;
+    padding: 5px 10px;
   }
 }
 /* End Home Section */
@@ -1349,7 +1574,7 @@ label {
 
   .home-content h3,
   .home-content h3 span {
-    font-size: 28px;
+    font-size: 1.5rem;
   }
 
   .home-content p {
@@ -1962,7 +2187,7 @@ i {
   }
 
   .home-content h1 {
-    font-size: 20px;
+    font-size: 1.5rem;
   }
 
   .home-content p {
