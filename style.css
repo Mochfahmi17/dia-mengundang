@@ -16,6 +16,125 @@ body {
   cursor: none;
 }
 
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  padding: 0 5%;
+}
+
+.overlay .card-login {
+  padding: 1.5rem;
+  max-width: 24rem;
+  position: relative;
+  width: 100%;
+  background: #fff;
+  border-radius: 0.75rem;
+  cursor: default;
+}
+
+.overlay .card-login .close-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-color: #ef4444;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.overlay .card-login .close-btn:hover {
+  background-color: #dc2626;
+}
+
+.overlay .card-login .close-btn i {
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+.overlay .card-login .card-login-header {
+  margin-bottom: 2rem;
+}
+
+.overlay .card-login .card-login-header .card-title {
+  font-size: 1.125rem;
+  text-align: center;
+}
+
+.overlay .card-login .card-login-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.overlay .card-login .card-login-content .btn-login-dashboard,
+.overlay .card-login .card-login-content .btn-login-buktam {
+  border: 1px solid #d1d5db;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: 100px;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  text-decoration: none;
+  font-size: 0.875rem;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.overlay .card-login .card-login-content .btn-login-dashboard {
+  color: #000000;
+}
+
+.overlay .card-login .card-login-content .btn-login-dashboard:hover {
+  background-color: #f3f4f6;
+}
+
+.overlay .card-login .card-login-content .btn-login-buktam {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.overlay .card-login .card-login-content .btn-login-buktam:hover {
+  background-color: #1d4ed8;
+}
+
+.overlay .card-login .card-login-content .btn-login-dashboard .icon-circle,
+.overlay .card-login .card-login-content .btn-login-buktam .icon-circle {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay .card-login .card-login-content .btn-login-dashboard .icon-circle {
+  background: #2563eb;
+}
+
+.overlay .card-login .card-login-content .btn-login-dashboard .icon-circle i {
+  color: #fff;
+}
+
+.overlay .card-login .card-login-content .btn-login-buktam .icon-circle {
+  background-color: #fff;
+}
+
+.overlay .card-login .card-login-content .btn-login-buktam .icon-circle i {
+  color: #1050ff;
+}
+
 .cursor-dot {
   width: 5px;
   height: 5px;
@@ -125,7 +244,10 @@ nav ul li a:active {
 }
 
 .btn-login {
+  cursor: pointer;
   display: flex;
+  border: none;
+  height: 2rem;
   align-items: center;
   gap: 8px;
   background-color: #1a1a1a;
@@ -176,14 +298,14 @@ nav ul li a:active {
     display: none;
   }
 
-  .menu-icon {
+  /* .menu-icon {
     display: flex;
     align-items: center;
     font-size: 24px;
     color: white;
     cursor: pointer;
     margin-left: auto;
-  }
+  } */
 
   .menu-icon i {
     color: white; /* atau warna lain sesuai desain */
@@ -191,9 +313,9 @@ nav ul li a:active {
     transition: color 0.3s ease;
   }
 
-  .btn-login {
+  /* .btn-login {
     display: none;
-  }
+  } */
 
   .home {
     /* padding: 0 20px; */

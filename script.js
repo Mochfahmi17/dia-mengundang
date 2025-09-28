@@ -1,5 +1,15 @@
 const menuIcon = document.getElementById("menu-icon");
 const menuList = document.getElementById("menu-list");
+const overlay = document.getElementById("overlay");
+
+function openLogin() {
+  overlay.style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+function closeLogin() {
+  overlay.style.display = "none";
+  document.body.style.overflow = "auto";
+}
 
 menuIcon.addEventListener("click", () => {
   menuList.classList.toggle("hidden");

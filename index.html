@@ -35,11 +35,36 @@
           <li><a href="#">Tema</a></li>
         </ul>
         <div class="login-button">
-          <a href="#" class="btn-login"> <i class="fa-solid fa-user"></i> Login </a>
+          <button type="button" onclick="openLogin()" class="btn-login"><i class="fa-solid fa-user"></i> Login</button>
         </div>
       </div>
     </nav>
     <!-- ============End Navbar============ -->
+
+    <!-- ===========Login================== -->
+    <div id="overlay" class="overlay">
+      <div class="card-login">
+        <div onclick="closeLogin()" class="close-btn"><i class="fa-solid fa-xmark"></i></div>
+        <div class="card-login-header">
+          <div class="card-title"><h2>Diamengundang</h2></div>
+        </div>
+        <div class="card-login-content">
+          <a href="#" class="btn-login-dashboard">
+            <p>Login Dashboard</p>
+            <div class="icon-circle">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </a>
+          <a href="#" class="btn-login-buktam">
+            <p>Login Buku Tamu Digital</p>
+            <div class="icon-circle">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- ===========End Login================== -->
 
     <main>
       <!-- ============Hero Section============ -->
