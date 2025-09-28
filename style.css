@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  background-color: #0f172a;
+  background: radial-gradient(ellipse 300% 10% at top center, #1f41bb 0%, #0a0f1e 40%, transparent 80%), radial-gradient(ellipse 300% 10% at bottom center, #1f41bb 0%, #0b2145 40%, transparent 80%), #000000;
   min-height: 100vh;
   /* margin: 0; */
   font-family: "Poppins", sans-serif;
@@ -271,6 +271,18 @@ nav ul li a:active {
   width: 100%;
 }
 
+/* .glow {
+  height: 500px;
+  inset-inline: 0;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.glow-top {
+  background: radial-gradient(circle, red, blue);
+  top: -30%;
+} */
+
 .home-content h3 {
   color: white;
   /* font-size: 32px; */
@@ -303,7 +315,7 @@ nav ul li a:active {
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   display: flex;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid #d1d5db;
   background-color: #0b0d12;
   align-items: center;
   flex-direction: column;
@@ -315,7 +327,7 @@ nav ul li a:active {
 .ring {
   position: absolute;
   border-radius: 100%;
-  border: 1px solid #374151;
+  border: 1px solid #d1d5db;
 }
 
 .r1 {
@@ -689,7 +701,7 @@ nav ul li a:active {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
-  background-color: #000000;
+  /* background-color: #000000; */
 }
 
 .testi-kiri {
