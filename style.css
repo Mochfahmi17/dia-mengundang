@@ -66,8 +66,23 @@ body {
 }
 
 .overlay .card-login .card-login-header .card-title {
-  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
   text-align: center;
+}
+
+.overlay .card-login .card-login-header .card-title h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.overlay .card-login .card-login-header .card-title img {
+  background-color: #000;
+  padding: 4px;
+  border-radius: 50%;
+  width: 35px;
 }
 
 .overlay .card-login .card-login-content {
