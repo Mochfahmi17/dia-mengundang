@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  background: radial-gradient(ellipse 300% 10% at top center, #1f41bb 0%, #0a0f1e 40%, transparent 80%), radial-gradient(ellipse 300% 10% at bottom center, #1f41bb 0%, #0a0f1e 40%, transparent 80%), #000000;
+  background: radial-gradient(ellipse 300% 10% at top center, #1f41bb 0%, #0a0f1e 40%, transparent 80%), radial-gradient(ellipse 300% 10% at bottom center, #1f41bb 0%, #0a0f1e 40%, transparent 80%), #020618;
   min-height: 100vh;
   /* margin: 0; */
   font-family: "Poppins", sans-serif;
